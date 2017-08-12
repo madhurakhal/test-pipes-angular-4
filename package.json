@@ -1,0 +1,40 @@
+{
+  "name": "test-pipes-angular-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "jsnext:main": "esm/index.js",
+  "module": "esm/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "prepublish": "node_modules/.bin/gulp clean && npm run ngc && npm run ngc:esm && npm run rollup && npm run rollup:min",
+    "tsc": "node_modules/.bin/tsc -p .",
+    "karma": "node_modules/.bin/karma start karma.conf.js",
+    "test": "npm run karma",
+    "ngc": "node_modules/.bin/ngc -p tsconfig.json",
+    "ngc:esm": "node_modules/.bin/ngc -p tsconfig.esm.json",
+    "rollup": "node_modules/.bin/rollup -c",
+    "rollup:min": "node_modules/.bin/rollup -c --environment BUNDLE_MIN",
+    "cover": "cat ./coverage/*/lcovonly | ./node_modules/.bin/coveralls"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/compiler": "^4.3.4",
+    "@angular/compiler-cli": "^4.3.4",
+    "@angular/core": "^4.3.4",
+    "@angular/platform-server": "^4.3.4",
+    "core-js": "^2.5.0",
+    "coveralls": "^2.13.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "reflect-metadata": "^0.1.10",
+    "rollup": "^0.47.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rxjs": "^5.4.3",
+    "typescript": "^2.4.2",
+    "zone.js": "^0.8.16"
+  }
+}
