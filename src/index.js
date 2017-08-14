@@ -5,13 +5,15 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var pipes_1 = require("./pipes");
+var services_1 = require("./services");
 var NgPipeModule = (function () {
     function NgPipeModule() {
     }
     NgPipeModule.decorators = [
         { type: core_1.NgModule, args: [{
                     exports: [
-                        pipes_1.NgCapitalizeModule
+                        pipes_1.NgCapitalizeModule,
+                        services_1.NgJptServices
                     ]
                 },] },
     ];
@@ -22,4 +24,5 @@ var NgPipeModule = (function () {
 exports.NgPipeModule = NgPipeModule;
 ;
 __export(require("./pipes"));
+__export(require("./services"));
 //# sourceMappingURL=index.js.map

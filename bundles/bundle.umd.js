@@ -56,13 +56,46 @@ var NgCapitalizeModule = (function () {
     return NgCapitalizeModule;
 }());
 
+var JptServices = (function () {
+    function JptServices() {
+    }
+    JptServices.prototype.getAllInfo = function () {
+        return ["hello", "world", "this", "is", "test"];
+    };
+    JptServices.decorators = [
+        { type: _angular_core.Injectable },
+    ];
+    /** @nocollapse */
+    JptServices.ctorParameters = function () { return []; };
+    return JptServices;
+}());
+
+var NgJptServices = (function () {
+    function NgJptServices() {
+    }
+    NgJptServices.decorators = [
+        { type: _angular_core.NgModule, args: [{
+                    declarations: [
+                        JptServices
+                    ],
+                    exports: [
+                        JptServices
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    NgJptServices.ctorParameters = function () { return []; };
+    return NgJptServices;
+}());
+
 var NgPipeModule = (function () {
     function NgPipeModule() {
     }
     NgPipeModule.decorators = [
         { type: _angular_core.NgModule, args: [{
                     exports: [
-                        NgCapitalizeModule
+                        NgCapitalizeModule,
+                        NgJptServices
                     ]
                 },] },
     ];
@@ -76,6 +109,8 @@ exports.NgCapitalizeModule = NgCapitalizeModule;
 exports.isString = isString;
 exports.upperFirst = upperFirst;
 exports.CapitalizePipe = CapitalizePipe;
+exports.NgJptServices = NgJptServices;
+exports.JptServices = JptServices;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
